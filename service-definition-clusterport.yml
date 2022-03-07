@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myapp-service-clusterport
+  
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 80
+      port: 8080
+            
+  selector:
+    app: myapp
+    type: front-end
